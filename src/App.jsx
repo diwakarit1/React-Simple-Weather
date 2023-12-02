@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-//import { Button } from "bootstrap";
+
 import Button from "react-bootstrap/Button";
 
 const api = {
@@ -11,12 +11,8 @@ const api = {
 function App() {
   const [search, setSearch] = useState("");
   const [weather, setWeather] = useState({});
-  // const [error, setError] = useState(false);
 
   const clickHandler = () => {
-    // console.log("search press");
-    //console.log(search);
-
     fetch(`${api.base}weather?q=${search}&units=metric&appid=${api.key}`)
       .then((res) => {
         if (!res.ok) {
@@ -54,11 +50,8 @@ function App() {
           Search
         </Button>
 
-        {/* <Button variant="info" onClick={clickHandler}  >Info</Button> */}
         {typeof weather.main != "undefined" ? (
           <div className="text-white d-flex flex-column justify-content-center align-items-center fs-4">
-            {/* {error?<p>Enter city properly</p>:}:(""))} */}
-
             <p> {weather.name}</p>
             <p> {weather.main.temp}&#8451;</p>
 
