@@ -42,7 +42,7 @@ function App() {
         <h1 className="m-4">Weather App</h1>
         <input
           type="text"
-          placeholder="search..."
+          placeholder="Enter city name.."
           value={search}
           onChange={(e) => {
             setSearch(e.target.value);
